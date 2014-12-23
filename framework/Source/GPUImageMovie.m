@@ -443,6 +443,16 @@
     [self processMovieFrame:movieFrame withSampleTime:currentSampleTime];
 }
 
+- (CMTime)currentPosition
+{
+    return processingFrameTime;
+}
+
+- (CMTime)duration
+{
+    return self.asset.duration;
+}
+
 - (float)progress
 {
     if ( AVAssetReaderStatusReading == reader.status )
